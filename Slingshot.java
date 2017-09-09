@@ -3,15 +3,18 @@ import javax.swing.*;
 
 public class Slingshot extends JLabel {
 	private int power;
+	private Level level;
 
-	public Slingshot(ImageIcon i, int width, int height) {
+	public Slingshot(ImageIcon i, int width, int height, Level l) {
 		super(i);
+		level = l;
 		setPreferredSize(new Dimension(width, height));
 		setVisible(false);
 	}
 
 	public void move(int vx) {
-		setBounds(getX() + vx, getY(), getWidth(), getHeight());
+		if(getX()+vx >= 0 && getX()+getWidth()+vx <= level.getWidth())
+			setBounds(getX() + vx, getY(), getWidth(), getHeight());
 	}
 
 	public void setPower(int p) {

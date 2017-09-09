@@ -4,18 +4,9 @@ import javax.swing.*;
 @SuppressWarnings("serial")
 public class Game {
 
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		Graphics2D g2d = (Graphics2D) g;
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
-		ball.paint(g2d);
-	}
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new JFrame("Mini Tennis");
-        Level level1 = new Level()
+        Level level1 = new Level(0, 30, 30, "");
         frame.add(level1);
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
@@ -23,8 +14,7 @@ public class Game {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		while (true) {
-			level.update();
-			game.repaint();
+			level1.update();
 			Thread.sleep(10);
 		}
 	}

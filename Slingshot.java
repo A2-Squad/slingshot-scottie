@@ -12,6 +12,7 @@ public class Slingshot extends JLabel {
 		setVisible(false);
 	}
 
+<<<<<<< HEAD
     //TESTING
     public Slingshot(String s, int width, int height, Level l) {
 		super(s);
@@ -32,6 +33,7 @@ public class Slingshot extends JLabel {
 			shoot();
 		}
 	}
+
 	public void setPower(int p) {
 		power = p;
 	}

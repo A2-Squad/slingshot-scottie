@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Level extends JPanel{
+public class Level extends JPanel implements KeyListener{
 	private Slingshot shooter;
 	private ArrayList<Projectile> projectiles;
 	private Target[] targets;
@@ -23,6 +23,19 @@ public class Level extends JPanel{
 		JLabel background = new JLabel(new ImageIcon(backgroundPath));
 		background.setPreferredSize(this.getPreferredSize());
 		this.add(background);
+	}
+	
+	public void keyPressed(keyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_LEFT)
+			shooter.move(-1);
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+			shooter.move(1);
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+			shooter.incPower();
+	}
+	public void keyPressed(keyEvent e) {
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
+			shooter.shoot();
 	}
 
     public void update() {

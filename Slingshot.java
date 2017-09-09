@@ -16,7 +16,14 @@ public class Slingshot extends JLabel {
 		if(getX()+vx >= 0 && getX()+getWidth()+vx <= level.getWidth())
 			setBounds(getX() + vx, getY(), getWidth(), getHeight());
 	}
-
+	
+	public void incPower() {
+		setPower(getPower() + 0.5);
+		if(power >= 100) {
+			setPower(100);
+			shoot();
+		}
+	}
 	public void setPower(int p) {
 		power = p;
 	}

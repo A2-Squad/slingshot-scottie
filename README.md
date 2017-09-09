@@ -1,1 +1,3 @@
-# slingshot-scottie
+## slingshot-scottie
+# How we made it
+Java

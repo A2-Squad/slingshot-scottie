@@ -11,7 +11,7 @@ public class Level extends JPanel{
 	private final int SHOOTER_HEIGHT; //TODO set value based on image
 	private final int LEVEL_WIDTH; //TODO set this value
 	private final int LEVEL_HEIGHT; //TODO set this value
-	
+
 	public Level(int numTargets, int targetWidth, int targetHeight, String backgroundPath) {
 		shooter = new Slingshot(new ImageIcon(""), SHOOTER_WIDTH, SHOOTER_HEIGHT); //TODO replace empty string with path to slingshot image
 		projectiles = new ArrayList<Projectile>();
@@ -24,7 +24,13 @@ public class Level extends JPanel{
 		background.setPreferredSize(this.getPreferredSize());
 		this.add(background);
 	}
-	
+
+    public void update() {
+        for (p: projectiles) {
+            
+        }
+    }
+
 	protected void paintComponent(Graphics g) {
 	    super.paintComponent(g);
 	    shooter.repaint();
